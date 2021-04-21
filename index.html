@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ComposerList">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Famous Composers</title>
+
+    <script type= "text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <script type= "text/javascript" src="app.js"></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="style.css ">
+</head>
+<body ng-controller="ComposerController" style="background-color: bisque;">
+
+    <h1>3 Famous Composers</h1>
+
+    <hr>
+    <table class="top-table">
+        <tr>
+            <td><img ng-click="choose = 'Bach'"  src="c1.png">Bach</td>
+            <td><img ng-click="choose = 'Mozart'"  src="c2.png">Mozart</td>
+            <td><img ng-click="choose = 'Beethoven'" src="c3.png">Beethoven</td>
+        </tr>
+
+    </table>
+
+
+    <table class="bottom-table">
+        <tr>
+            <td colspan="3"><h2>Top 5 Pieces of Music From Composer</h2></td>
+        </tr>
+            
+
+        <tr ng-repeat="p in pieces" ng-if= "p.composer == choose">
+            <td><img src="{{p.pic}}"></td>
+            <td>{{p.composer}}</td>
+            <td>{{p.title}}</td>
+        </tr>
+    </table>
+    
+    
+</body>
+</html>
